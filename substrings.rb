@@ -8,7 +8,7 @@ def substrings(string, dictionary)
   input_array = convert_string_to_array(string)
   dictionary.each_with_object(Hash.new(0)) do |dict_word, result|
     input_array.each do |input_word|
-      result[dict_word] += 1 if dict_word.include?(input_word.downcase) || input_word.downcase.include?(dict_word)
+      result[dict_word] += 1 if input_word.include?(dict_word)
     end
   end
 end
